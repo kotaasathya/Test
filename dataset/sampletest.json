@@ -1,0 +1,58 @@
+{
+	"name": "sampletest",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SqlServer1",
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"servername": {
+					"value": "@dataset().datasetservername",
+					"type": "Expression"
+				},
+				"databasename": {
+					"value": "@dataset().datasetdatabasename",
+					"type": "Expression"
+				},
+				"username": {
+					"value": "@dataset().datasetusername",
+					"type": "Expression"
+				},
+				"pasword": {
+					"value": "@dataset().datasetpassword",
+					"type": "Expression"
+				}
+			}
+		},
+		"parameters": {
+			"tablename": {
+				"type": "string"
+			},
+			"schemaname": {
+				"type": "string"
+			},
+			"datasetservername": {
+				"type": "string"
+			},
+			"datasetdatabasename": {
+				"type": "string"
+			},
+			"datasetusername": {
+				"type": "string"
+			},
+			"datasetpassword": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": {
+				"value": "@dataset().tablename",
+				"type": "Expression"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
